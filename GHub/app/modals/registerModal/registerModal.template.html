@@ -1,0 +1,55 @@
+﻿<div class="modal-header">
+    <h4 class="modal-title">Registration</h4>
+</div>
+<div class="modal-body">    
+
+    <!--<div class="row">
+        <div class="col-md-12">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"><span class="fa fa-at"></span></span>
+                <input ng-model="vm.email" type="email" class="form-control" placeholder="email" aria-describedby="basic-addon1" autofocus>
+            </div>
+            <div ng-show="vm.emailError" class="alert alert-danger" role="alert" ng-bind="vm.emailError"></div>
+        </div>
+    </div>
+    
+    <div ng-hide="vm.emailError" class="row"><div class="col-md-12">&nbsp;</div></div>-->
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"><span class="fa fa-user"></span></span>
+                <input ng-model="vm.username" type="text" class="form-control" placeholder="username" aria-describedby="basic-addon1" autofocus>
+            </div>
+            <div ng-show="vm.usernameError" class="alert alert-danger" role="alert" ng-bind="vm.usernameError"></div>
+        </div>
+    </div>
+
+    <div ng-hide="vm.usernameError" class="row"><div class="col-md-12">&nbsp;</div></div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon2"><span class="fa fa-lock"></span></span>
+                <input ng-model="vm.password" type="password" class="form-control" placeholder="password" aria-describedby="basic-addon2">
+            </div>
+            <div ng-show="vm.passwordError" class="alert alert-danger" role="alert" ng-bind="vm.passwordError"></div>
+        </div>
+    </div>
+
+    <div ng-hide="vm.passwordError" class="row"><div class="col-md-12">&nbsp;</div></div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3"><span class="fa fa-lock"></span></span>
+                <input ng-model="vm.confirmPassword" type="password" class="form-control" placeholder="confirm password" aria-describedby="basic-addon3">
+            </div>
+            <div ng-show="vm.confirmPasswordError" class="alert alert-danger" role="alert" ng-bind="vm.confirmPasswordError"></div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" type="button" ng-click="vm.submit()">Submit</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+</div>
