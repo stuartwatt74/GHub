@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace GHub.Hubs
 {
+    [Authorize]
     public class DisplayHub : Hub
     {
         public void ReceiveMessage(InputModel model)

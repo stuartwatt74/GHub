@@ -3,22 +3,22 @@
 
     angular.module('app').controller('HomeController', homeController);
 
-    homeController.$inject = ['$scope', 'HubService'];
+    homeController.$inject = ['$scope'];
 
-    function homeController($scope, hubService) {
+    function homeController($scope) {
 
         var vm = this;
 
-        hubService.receiveMessage($scope, 'test-display-update', function (event, args) {
-            vm.time = args.Time
-            $scope.$apply();
-        });
+        //hubService.receiveMessage($scope, 'test-display-update', function (event, args) {
+        //    vm.time = args.Time
+        //    $scope.$apply();
+        //});
 
-        vm.reset = function () {
-            hubService.sendMessage({
-                name: "reset",
-            });
-        };
+        //vm.reset = function () {
+        //    hubService.sendMessage({
+        //        name: "reset",
+        //    });
+        //};
     }
 
 }());

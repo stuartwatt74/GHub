@@ -9,7 +9,7 @@
 
         var authentication = clearAuthentication();
 
-        var service = {            
+        var service = {
             isStateAllowed: isStateAllowed,
             isApiAuthorised: isApiAuthorised,
             login: login,
