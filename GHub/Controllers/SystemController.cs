@@ -25,7 +25,7 @@ namespace GHub.Controllers
             HostingEnvironment.RegisterObject(this);
             
             _taskTimer = new Timer(OnTimerElapsed, null,
-                TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(.1));
+                TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(.01));
 
             _startTime = DateTime.Now;
         }

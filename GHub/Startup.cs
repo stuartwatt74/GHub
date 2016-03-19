@@ -13,13 +13,16 @@ using Newtonsoft.Json.Serialization;
 using System.Linq;
 using Microsoft.Owin.Cors;
 using Microsoft.AspNet.SignalR;
+using System.Reflection;
+using Microsoft.AspNet.SignalR.Infrastructure;
+using Newtonsoft.Json;
 
 [assembly: OwinStartup(typeof(GHub.Startup))]
 
 namespace GHub
 {
     public class Startup
-    {
+    {        
         public void Configuration(IAppBuilder app)
         {
             var config = new HttpConfiguration();
@@ -56,12 +59,13 @@ namespace GHub
             app.UseFileServer(options);
             
             TestController.Instance.SetHub<DisplayHub>();
-                        
+            
+
             // Set up SignalR with Authentication
             app.Map("/signalr", map =>
             {
                 map.UseCors(CorsOptions.AllowAll);
-
+                
                 map.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions()
                 {
                     Provider = new QueryStringOAuthBearerProvider()
@@ -73,8 +77,9 @@ namespace GHub
                 };
                 map.RunSignalR(hubConfiguration);
             });
+            
         }
-
+        
         // SignalR Authentication Provider
         public class QueryStringOAuthBearerProvider : OAuthBearerAuthenticationProvider
         {

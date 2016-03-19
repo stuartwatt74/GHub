@@ -44,10 +44,10 @@ namespace GHub.Controllers
                     Minute = now.Minute,
                     Second = now.Second,
                     Millisecond = now.Millisecond
-                },                
+                }                
             };
             this.BroadcastMessage(model);
-            
+
         }
 
         public override void ReceiveMessage(IInputModel model)

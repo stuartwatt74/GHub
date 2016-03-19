@@ -155,6 +155,7 @@
   <ItemGroup>
     <Compile Include="AuthContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\ISystemController.cs" />
     <Compile Include="Controllers\SystemController.cs" />
     <Compile Include="Controllers\TestController.cs" />
@@ -165,6 +166,7 @@
     <Compile Include="Models\InputModel.cs" />
     <Compile Include="Models\TimeModel.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\WidgetModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AuthRepository.cs" />
@@ -221,7 +223,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.module.js" />
-    <Content Include="app\directives\clock\clock.directive.js" />
+    <Content Include="app\directives\dashboard\dashboard.service.js" />
+    <Content Include="app\widgets\clock\clock.directive.js" />
+    <Content Include="app\directives\dashboard\dashboard.css" />
+    <Content Include="app\directives\dashboard\dashboard.directive.js" />
+    <Content Include="app\directives\dashboard\dashboard.template.html" />
+    <Content Include="app\directives\dashboard\dashboardWidget.directive.js" />
+    <Content Include="app\directives\dashboard\dashboardWidget.template.html" />
+    <Content Include="app\directives\view3d\view3d.directive.js" />
     <Content Include="app\home\home.controller.js" />
     <Content Include="app\home\home.template.html" />
     <Content Include="app\modals\registerModal\registerModal.controller.js" />
@@ -233,6 +242,7 @@
     <Content Include="app\shared\authInterceptor.service.js" />
     <Content Include="app\user\user.controller.js" />
     <Content Include="app\user\user.template.html" />
+    <Content Include="Content\angular-gridster.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -246,6 +256,7 @@
     <Content Include="index.html" />
     <Content Include="Scripts\angular-cookies.js" />
     <Content Include="Scripts\angular-cookies.min.js" />
+    <Content Include="Scripts\angular-gridster.min.js" />
     <Content Include="Scripts\angular-local-storage.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-sanitize.min.js" />
@@ -259,6 +270,7 @@
     <Content Include="Scripts\jquery-2.2.1.min.js" />
     <Content Include="Scripts\jquery.signalR-2.2.0.js" />
     <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
+    <Content Include="Scripts\three.min.js" />
     <Content Include="Scripts\toastr.min.css" />
     <Content Include="Scripts\toastr.min.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-1.2.4.min.js" />

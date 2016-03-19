@@ -6,6 +6,7 @@
         'ui.bootstrap',
         'ngCookies',
         'LocalStorageModule',
+        'gridster',
     ]);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', '$httpProvider'];
