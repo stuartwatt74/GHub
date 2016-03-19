@@ -29,12 +29,12 @@ namespace GHub.Controllers
                 },
                 new WidgetModel()
                 {
-                    Title = "Clock 2",
+                    Title = "Periscope",
                     SizeX = 1,
                     SizeY = 1,
                     Col = 1,
                     Row = 0,
-                    Template = "<clock></clock>"
+                    Template = "<periscope></periscope>"
                 }
             };
 
