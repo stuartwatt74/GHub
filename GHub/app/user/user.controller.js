@@ -10,7 +10,7 @@
         var vm = this;
 
         hubService.receiveMessage($scope, 'test-display-update', function (event, args) {
-            $scope.model = args;            
+            $scope.model = args;
             $scope.$apply();
         });
     }

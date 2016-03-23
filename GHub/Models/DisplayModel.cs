@@ -10,5 +10,7 @@ namespace GHub.Models
     {
         public string EventName { get; set; }
         public TimeModel Time { get; set; }        
+        public List<Model3D> Models { get; set; }
+
     }
 }

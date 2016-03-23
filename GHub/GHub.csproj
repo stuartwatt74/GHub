@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BulletSharp">
+      <HintPath>..\packages\BulletSharp\BulletSharp.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -156,7 +159,10 @@
     <Compile Include="AuthContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\DisplayController.cs" />
     <Compile Include="Controllers\ISystemController.cs" />
+    <Compile Include="Controllers\SimController.cs" />
+    <Compile Include="Controllers\SimControllerBase.cs" />
     <Compile Include="Controllers\SystemController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Hubs\DisplayHub.cs" />
@@ -164,6 +170,7 @@
     <Compile Include="Models\IDisplayModel.cs" />
     <Compile Include="Models\IInputModel.cs" />
     <Compile Include="Models\InputModel.cs" />
+    <Compile Include="Models\Model3D.cs" />
     <Compile Include="Models\TimeModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\WidgetModel.cs" />
@@ -224,13 +231,13 @@
   <ItemGroup>
     <Content Include="app\app.module.js" />
     <Content Include="app\directives\dashboard\dashboard.service.js" />
+    <Content Include="app\shared\display.service.js" />
     <Content Include="app\widgets\clock\clock.directive.js" />
     <Content Include="app\directives\dashboard\dashboard.css" />
     <Content Include="app\directives\dashboard\dashboard.directive.js" />
     <Content Include="app\directives\dashboard\dashboard.template.html" />
     <Content Include="app\directives\dashboard\dashboardWidget.directive.js" />
     <Content Include="app\directives\dashboard\dashboardWidget.template.html" />
-    <Content Include="app\directives\view3d\view3d.directive.js" />
     <Content Include="app\home\home.controller.js" />
     <Content Include="app\home\home.template.html" />
     <Content Include="app\modals\registerModal\registerModal.controller.js" />
@@ -243,6 +250,7 @@
     <Content Include="app\user\user.controller.js" />
     <Content Include="app\user\user.template.html" />
     <Content Include="app\widgets\periscope\periscope.directive.js" />
+    <Content Include="app\widgets\test\test.directive.js" />
     <Content Include="Content\angular-gridster.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

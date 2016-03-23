@@ -1,4 +1,5 @@
-﻿using GHub.Models;
+﻿using BulletSharp;
+using GHub.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +9,12 @@ using System.Threading.Tasks;
 namespace GHub.Controllers
 {
     public class TestController : SystemController
-    {
-        private DateTime _startTime;
-        private double _f;
+    {        
+        SimController _sim;
+
         public TestController()
         {
-            _startTime = DateTime.Now;
-            _f = 0;
+            _sim = new SimController(60);
         }
 
         public static new ISystemController Instance
@@ -33,7 +33,7 @@ namespace GHub.Controllers
         {
             DateTime now = DateTime.Now;
 
-            _f += 0.01;
+            _sim.Step();
 
             DisplayModel model = new DisplayModel()
             {
@@ -44,7 +44,8 @@ namespace GHub.Controllers
                     Minute = now.Minute,
                     Second = now.Second,
                     Millisecond = now.Millisecond
-                }                
+                },                
+                Models = _sim.GetModels(),
             };
             this.BroadcastMessage(model);
 
@@ -55,7 +56,20 @@ namespace GHub.Controllers
             InputModel m = (InputModel)model;
 
             if (m.EventName == "reset")
-                _startTime = DateTime.Now;
+            {
+                _sim.Dispose();
+                _sim = new SimController(60);
+            }
+        }
+
+        public override List<Model3D> GetModels()
+        {
+            List<Model3D> models = null;
+            if (_sim != null)
+            {
+                 models = _sim.GetModels();
+            }
+            return models;
         }
     }
 }

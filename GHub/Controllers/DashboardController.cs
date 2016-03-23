@@ -30,11 +30,20 @@ namespace GHub.Controllers
                 new WidgetModel()
                 {
                     Title = "Periscope",
-                    SizeX = 1,
+                    SizeX = 2,
                     SizeY = 1,
                     Col = 1,
                     Row = 0,
                     Template = "<periscope></periscope>"
+                },
+                new WidgetModel()
+                {
+                    Title = "Test",
+                    SizeX = 1,
+                    SizeY = 1,
+                    Col = 3,
+                    Row = 0,
+                    Template = "<test></test>"
                 }
             };
 

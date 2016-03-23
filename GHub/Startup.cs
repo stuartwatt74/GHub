@@ -16,6 +16,7 @@ using Microsoft.AspNet.SignalR;
 using System.Reflection;
 using Microsoft.AspNet.SignalR.Infrastructure;
 using Newtonsoft.Json;
+using Microsoft.Owin.StaticFiles.ContentTypes;
 
 [assembly: OwinStartup(typeof(GHub.Startup))]
 
@@ -56,10 +57,11 @@ namespace GHub
             options.StaticFileOptions.FileSystem = physicalFileSystem;
             options.StaticFileOptions.ServeUnknownFileTypes = true;
             options.DefaultFilesOptions.DefaultFileNames = new[] { "index.html" };
+            
             app.UseFileServer(options);
             
             TestController.Instance.SetHub<DisplayHub>();
-            
+            TestController.Instance.GetModels();
 
             // Set up SignalR with Authentication
             app.Map("/signalr", map =>

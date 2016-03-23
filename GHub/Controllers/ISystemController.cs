@@ -1,5 +1,6 @@
 ﻿using GHub.Models;
 using Microsoft.AspNet.SignalR;
+using System.Collections.Generic;
 
 namespace GHub.Controllers
 {
@@ -9,5 +10,7 @@ namespace GHub.Controllers
         void Stop(bool immediate);
         
         void ReceiveMessage(IInputModel model);
+
+        List<Model3D> GetModels();
     }
 }

@@ -25,7 +25,7 @@ namespace GHub.Controllers
             HostingEnvironment.RegisterObject(this);
             
             _taskTimer = new Timer(OnTimerElapsed, null,
-                TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(.01));
+                TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(.03));
 
             _startTime = DateTime.Now;
         }
@@ -63,7 +63,13 @@ namespace GHub.Controllers
 
         protected void BroadcastMessage(IDisplayModel message)
         {
-            _hub.Clients.All.broadcastMessage(message);
+            if(_hub != null)
+                _hub.Clients.All.broadcastMessage(message);
+        }
+
+        public virtual List<Model3D> GetModels()
+        {
+            return null;
         }
 
         public void Stop(bool immediate)
